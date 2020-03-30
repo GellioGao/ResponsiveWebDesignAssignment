@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./../CSSs/Template.css" />
+    <link rel="stylesheet" type="text/css" href="./../CSSs/JobSearch.css" />
+    <title>Job Search Page</title>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <nav class="col-12 menu">
+            <a class="float-left logo nav-menu-item" href="Home.html">
+                <span class="site-name">Online IT Jobseeker</span>
+            </a>
+            <a class="float-left nav-menu-item" href="Home.html">HOME</a>
+            <a class="float-left nav-menu-item current-page" href="JobSearch.html">JOB SEARCH</a>
+            <a class="float-left nav-menu-item" href="Employer.html">EMPLOYER</a>
+            <a class="float-left nav-menu-item" href="Registration.html">REGISTRATION</a>
+            <a class="float-left nav-menu-item" href="Feedback.html">FEEDBACK</a>
+            <a class="float-left nav-menu-item" href="AboutUs.html">ABOUT US</a>
+        </nav>
+    </div>
+
+    <div class="content">
+
+        <div class="col-1">
+        </div>
+
+        <div class="col-10">
+            <div class="search-options">
+                <form>
+                    <fieldset class="no-border">
+                        <div class="basic-search-options">
+                            <div class="input-field job-title">
+                                <label for="job-title">Job Title</label>
+                                <div class="input-part">
+                                    <input type="text" id="job-title" placeholder="Enter key words for the job title" />
+                                </div>
+                            </div>
+                            <div class="input-field specialization">
+                                <label for="specialization">Specialization</label>
+
+                                <div class="input-part">
+                                    <input type="text" id="specialization" placeholder="Any classification" />
+                                </div>
+
+                            </div>
+                            <div class="input-field location">
+                                <label for="location">Location</label>
+
+                                <div class="input-part">
+                                    <input type="text" id="location" placeholder="Enter suburb, town or city" />
+                                </div>
+
+                            </div>
+                            <input class="button search" type="submit" value="Search" title="Search" />
+                        </div>
+                        <a class="float-right" href="#more-options" id="more-options">More Options</a>
+                        <a class="float-right" href="#" id="less-options">Less Options</a>
+                        <div id="more-search-options" class="more-search-options">
+                            <div class="input-field company-name">
+                                <label for="company-name">Company Name</label>
+
+                                <div class="input-part">
+                                    <input type="text" id="company-name" placeholder="Enter company name" />
+                                </div>
+
+                            </div>
+                            <div class="input-field job-responsibilities">
+                                <label for="job-responsibilities">Job Responsibilities</label>
+
+                                <div class="input-part">
+                                    <input type="text" id="job-responsibilities" placeholder="Enter key words" />
+                                </div>
+
+                            </div>
+                            <div class="input-field job-requirements">
+                                <label for="job-requirements">Job Requirements</label>
+
+                                <div class="input-part">
+                                    <input type="text" id="job-requirements" placeholder="Enter key words" />
+                                </div>
+
+                            </div>
+                            <div class="input-field salary-from">
+                                <label for="salary-from">Salary</label>
+
+                                <div class="input-part">
+                                    <input class="low-salary" type="number" id="salary-from" placeholder="from" />
+                                    <span> -- </span>
+                                    <input class="up-salary" type="number" id="salary-to" placeholder="to" />
+                                </div>
+
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+
+            <div class="job-list">
+                <table class="job-list-table">
+                    <tr>
+                        <th>Job Title</th>
+                        <th>Description</th>
+                        <th>Publishing Date</th>
+                        <th>Operation</th>
+                    </tr>
+                    <tr>
+                        <td class="job-title">Job 1</td>
+                        <td class="description">Description of Job 1</td>
+                        <td class="publishing-date"><time>24 March 2020</time></td>
+                        <td class="operation">
+                            <a href="JobDetail.html"><button id="detail-job-1">Detail</button></a>
+                            <button id="apply-job-1">Apply</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="job-title">Job 2</td>
+                        <td class="description">Description of Job 2</td>
+                        <td class="publishing-date"><time>29 March 2020</time></td>
+                        <td class="operation">
+                            <a href="JobDetail.html"><button id="detail-job-2">Detail</button></a>
+                            <button id="apply-job-2">Apply</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="job-title">Job 2</td>
+                        <td class="description">Description of Job 2</td>
+                        <td class="publishing-date"><time>29 March 2020</time></td>
+                        <td class="operation">
+                            <a href="JobDetail.html"><button id="detail-job-2">Detail</button></a>
+                            <button id="apply-job-2">Apply</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="job-title">Job 2</td>
+                        <td class="description">Description of Job 2</td>
+                        <td class="publishing-date"><time>29 March 2020</time></td>
+                        <td class="operation">
+                            <a href="JobDetail.html"><button id="detail-job-2">Detail</button></a>
+                            <button id="apply-job-2">Apply</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="job-title">Job 2</td>
+                        <td class="description">Description of Job 2</td>
+                        <td class="publishing-date"><time>29 March 2020</time></td>
+                        <td class="operation">
+                            <a href="JobDetail.html"><button id="detail-job-2">Detail</button></a>
+                            <button id="apply-job-2">Apply</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="job-title">Job 2</td>
+                        <td class="description">Description of Job 2</td>
+                        <td class="publishing-date"><time>29 March 2020</time></td>
+                        <td class="operation">
+                            <a href="JobDetail.html"><button id="detail-job-2">Detail</button></a>
+                            <button id="apply-job-2">Apply</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="job-title">Job 2</td>
+                        <td class="description">Description of Job 2</td>
+                        <td class="publishing-date"><time>29 March 2020</time></td>
+                        <td class="operation">
+                            <a href="JobDetail.html"><button id="detail-job-2">Detail</button></a>
+                            <button id="apply-job-2">Apply</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="job-title">Job 2</td>
+                        <td class="description">Description of Job 2</td>
+                        <td class="publishing-date"><time>29 March 2020</time></td>
+                        <td class="operation">
+                            <a href="JobDetail.html"><button id="detail-job-2">Detail</button></a>
+                            <button id="apply-job-2">Apply</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="job-title">Job 2</td>
+                        <td class="description">Description of Job 2</td>
+                        <td class="publishing-date"><time>29 March 2020</time></td>
+                        <td class="operation">
+                            <a href="JobDetail.html"><button id="detail-job-2">Detail</button></a>
+                            <button id="apply-job-2">Apply</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="job-title">Job 2</td>
+                        <td class="description">Description of Job 2</td>
+                        <td class="publishing-date"><time>29 March 2020</time></td>
+                        <td class="operation">
+                            <a href="JobDetail.html"><button id="detail-job-2">Detail</button></a>
+                            <button id="apply-job-2">Apply</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-1">
+        </div>
+    </div>
+
+    <div class="footer">
+        <h1>Thanks for visiting Online IT Jobseeker</h1>
+    </div>
+</body>
+
+</html>
