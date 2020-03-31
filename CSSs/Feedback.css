@@ -1,0 +1,22 @@
+.search-form {
+    margin: 10px auto;
+}
+
+.input-field {
+    display: block;
+}
+
+.input-field input,
+.input-field textarea {
+    width: 100%;
+    margin: 10px auto;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 50px;
+}
+
+.submit-button {
+    margin: 10px 45%;
+}

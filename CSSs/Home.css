@@ -1,0 +1,78 @@
+.search-form {
+  margin: 50px auto;
+  display: block;
+  width: fit-content;
+}
+
+.search-form .form {
+  display: flex;
+  align-items: center;
+}
+
+.search-form .form * {
+  float: left;
+}
+
+.search-form .button.search {
+  margin: 5px 0 5px 20px;
+  line-height: 26px;
+}
+
+.input-field input {
+  width: 100%;
+}
+
+.input-field.job-title,
+.input-field.job-classification,
+.input-field.job-location {
+  margin-right: 10px;
+}
+
+.input-field.job-title input {
+  min-width: 100px;
+}
+
+.input-field.job-classification input {
+  min-width: 150px;
+}
+
+.input-field.job-location input {
+  min-width: 190px;
+}
+
+.more-options {
+  font-size: 0.7rem;
+  clear: left;
+  margin: 5px 15px 5px 20px;
+}
+
+.company-mission {
+  display: flex;
+  height: 252px;
+  width: 100%;
+  background: url(../images/home_background.png) 0/cover;
+  justify-content: flex-end;
+}
+.company-mission .mission-text {
+  width: 270px;
+  padding-top: 50px;
+  padding-right: 2%;
+}
+.company-mission .mission-text * {
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 1.3rem;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.company-mission .mission-text mark {
+  color: azure;
+  padding: 2px;    
+  border-radius: 2px;
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 9px 0 0;
+  background-color: #e60278!important;
+}

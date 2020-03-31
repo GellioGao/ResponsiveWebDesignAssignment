@@ -1,0 +1,20 @@
+.register-form form {
+    max-width: 70%;
+    margin: 5px auto;
+}
+
+.input-field {
+    margin: 10px auto;
+}
+
+.input-field label {
+    width: 20%;
+}
+
+.input-field input {
+    width: 80%;
+}
+
+.register-form form input[type="submit"] {
+    margin: 5px 45%;
+}

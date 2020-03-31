@@ -1,0 +1,19 @@
+.login-form form {
+    margin: 50px auto;
+}
+
+.input-field {
+    width: 60%;
+}
+
+.input-field label {
+    width: 100px;
+}
+
+.input-field input {
+    width: 70%;
+}
+
+.login-button {
+    margin: 10px 45%;
+}

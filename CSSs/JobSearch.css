@@ -1,0 +1,138 @@
+.search-options {
+    margin: 20px 3%;
+}
+
+#more-options,
+#less-options {
+    margin-right: 0;
+}
+
+#less-options,
+#more-options:target {
+    display: none;
+}
+
+#more-search-options {
+    overflow: hidden;
+    max-height: 0px;
+    transition: max-height 200ms ease-out;
+}
+
+#more-options:target+#less-options {
+    display: inherit;
+}
+
+#more-options:target~#more-search-options {
+    max-height: 300px;
+    transition: max-height 200ms ease-in;
+}
+
+.basic-search-options {
+    clear: both;
+    display: flex;
+    align-items: center;
+}
+
+.more-search-options {
+    clear: both;
+    display: block;
+    align-items: center;
+}
+
+.basic-search-options::after,
+.more-search-options::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.basic-search-options *,
+.more-search-options * {
+    float: left;
+}
+
+
+.input-field.job-title {
+    width: 30%;
+}
+
+.input-field.specialization {
+    width: 30%;
+}
+
+.input-field.location {
+    width: 30%;
+}
+
+.button.search {
+    width: 10%;
+    min-width: 90px;
+    line-height: 26px;
+}
+
+.input-field.company-name {
+    width: 30%;
+}
+
+.input-field.job-responsibilities {
+    width: 30%;
+}
+
+.input-field.job-requirements {
+    width: 30%;
+}
+
+.input-field.salary-from {
+    width: 100%;
+}
+
+.input-field .input-part {
+    display: flex;
+    align-items: center;
+}
+
+.input-field.salary-from .low-salary {
+    margin-right: 10px;
+    width: 30%;
+}
+
+.input-field.salary-from .up-salary {
+    margin-left: 10px;
+    width: 30%;
+}
+
+.job-list {}
+
+table {
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+.job-list-table {
+    width: 100%;
+}
+
+.job-list .job-title {
+    text-align: left;
+    width: 20%;
+}
+
+.job-list .description {
+    text-align: left;
+    width: 50%;
+}
+
+.job-list .publishing-date {
+    text-align: center;
+    width: 15%;
+}
+
+.job-list .operation {
+    text-align: center;
+    width: 15%;
+}
