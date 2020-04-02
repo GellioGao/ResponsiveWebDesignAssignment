@@ -15,6 +15,14 @@
     width: 80%;
 }
 
+.input-field input[type="radio"] {
+    width: auto;
+}
+
+.input-field .radio {
+    width: fit-content;
+}
+
 .register-form form input[type="submit"] {
     margin: 5px 45%;
 }

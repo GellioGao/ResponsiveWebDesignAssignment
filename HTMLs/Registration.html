@@ -47,7 +47,16 @@
 
                     <div class="input-field">
                         <label for="business-status">Business Status:</label>
-                        <input type="text" id="business-status" placeholder="Enter your business status here" />
+                        <div class="radio">
+                            <input type="radio" checked id="business-status-government" name="business-status"
+                                value="Government Sector" />
+                            <label for="business-status-government">Government Sector</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="business-status-private" name="business-status"
+                                value="Private Sector" />
+                            <label for="business-status-private">Private Sector</label>
+                        </div>
                     </div>
 
                     <div class="input-field">
@@ -77,8 +86,7 @@
 
                     <div class="input-field">
                         <label for="confirm-password">Confirm Password:</label>
-                        <input type="password" id="confirm-password"
-                            placeholder="Enter your password here again" />
+                        <input type="password" id="confirm-password" placeholder="Enter your password here again" />
                     </div>
                     <input class="register-button" type="submit" id="register" value="Register" />
                 </fieldset>
