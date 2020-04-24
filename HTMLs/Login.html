@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./../CSSs/Template.css" />
     <link rel="stylesheet" type="text/css" href="./../CSSs/Login.css" />
+    <script src="./../JavaScripts/Helper.js"></script>
+    <script src="./../JavaScripts/Login.js"></script>
     <title>Employer Login Page</title>
 </head>
 
@@ -22,6 +24,18 @@
             <a class="float-left nav-menu-item" href="Registration.html">REGISTRATION</a>
             <a class="float-left nav-menu-item" href="Feedback.html">FEEDBACK</a>
             <a class="float-left nav-menu-item" href="AboutUs.html">ABOUT US</a>
+
+            <div class="float-right dropdown">
+                <a href="javascript:void(0)" class="nav-menu-item">Menu</a>
+                <div class="dropdown-content">
+                    <a class="nav-menu-item" href="Home.html">HOME</a>
+                    <a class="nav-menu-item" href="JobSearch.html">JOB SEARCH</a>
+                    <a class="nav-menu-item" href="Employer.html">EMPLOYER</a>
+                    <a class="nav-menu-item" href="Registration.html">REGISTRATION</a>
+                    <a class="nav-menu-item" href="Feedback.html">FEEDBACK</a>
+                    <a class="nav-menu-item" href="AboutUs.html">ABOUT US</a>
+                </div>
+            </div>
         </nav>
     </div>
 
@@ -37,14 +51,19 @@
 
                     <div class="input-field">
                         <label for="username">Username:</label>
-                        <input type="text" id="username" placeholder="Enter your company name here" />
+                        <input type="text" id="username" placeholder="Enter your company name here" pattern="[a-zA-Z]+"
+                            minlength="6" required />
                     </div>
 
                     <div class="input-field">
                         <label for="password">Password:</label>
-                        <input type="password" id="password" placeholder="Enter your password here" />
+                        <input type="password" id="password" placeholder="Enter your password here" pattern="[a-zA-Z]+"
+                            minlength="6" required />
                     </div>
-                    <input class="login-button" type="submit" id="login" value="Login" />
+
+                    <div class="submit">
+                        <input class="login-button" type="submit" id="login" value="Login" />
+                    </div>
                 </fieldset>
             </form>
         </div>

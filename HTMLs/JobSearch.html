@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./../CSSs/Template.css" />
     <link rel="stylesheet" type="text/css" href="./../CSSs/JobSearch.css" />
+    <script src="./../JavaScripts/Helper.js"></script>
+    <script src="./../JavaScripts/JobSearch.js"></script>
     <title>Job Search Page</title>
 </head>
 
@@ -22,6 +24,18 @@
             <a class="float-left nav-menu-item" href="Registration.html">REGISTRATION</a>
             <a class="float-left nav-menu-item" href="Feedback.html">FEEDBACK</a>
             <a class="float-left nav-menu-item" href="AboutUs.html">ABOUT US</a>
+
+            <div class="float-right dropdown">
+                <a href="javascript:void(0)" class="nav-menu-item">Menu</a>
+                <div class="dropdown-content">
+                    <a class="nav-menu-item" href="Home.html">HOME</a>
+                    <a class="nav-menu-item current-page" href="JobSearch.html">JOB SEARCH</a>
+                    <a class="nav-menu-item" href="Employer.html">EMPLOYER</a>
+                    <a class="nav-menu-item" href="Registration.html">REGISTRATION</a>
+                    <a class="nav-menu-item" href="Feedback.html">FEEDBACK</a>
+                    <a class="nav-menu-item" href="AboutUs.html">ABOUT US</a>
+                </div>
+            </div>
         </nav>
     </div>
 
@@ -31,72 +45,79 @@
         </div>
 
         <div class="col-10">
-            <div class="search-options">
+            <div class="search-form">
                 <form>
                     <fieldset class="no-border">
-                        <div class="basic-search-options">
-                            <div class="input-field job-title">
-                                <label for="job-title">Job Title</label>
-                                <div class="input-part">
-                                    <input type="text" id="job-title" placeholder="Enter key words for the job title" />
+
+                        <div class="search-options">
+                            <div class="basic-search-options">
+                                <div class="input-field job-title">
+                                    <label for="job-title">Job Title</label>
+                                    <div class="input-part">
+                                        <input type="search" id="job-title"
+                                            placeholder="Enter key words for the job title" required />
+                                    </div>
+                                </div>
+                                <div class="input-field job-classification">
+                                    <label for="job-classification">Specialization</label>
+
+                                    <div class="input-part">
+                                        <input type="search" id="job-classification" placeholder="Any classification"
+                                            required />
+                                    </div>
+
+                                </div>
+                                <div class="input-field job-location">
+                                    <label for="job-location">Location</label>
+
+                                    <div class="input-part">
+                                        <input type="search" id="job-location" placeholder="Enter suburb, town or city"
+                                            required />
+                                    </div>
+
                                 </div>
                             </div>
-                            <div class="input-field specialization">
-                                <label for="specialization">Specialization</label>
+                            <a class="float-right" href="#more-options" id="more-options">More Options</a>
+                            <a class="float-right" href="#" id="less-options">Less Options</a>
+                            <div id="more-search-options" class="more-search-options">
+                                <div class="input-field company-name">
+                                    <label for="company-name">Company Name</label>
 
-                                <div class="input-part">
-                                    <input type="text" id="specialization" placeholder="Any classification" />
+                                    <div class="input-part">
+                                        <input type="search" id="company-name" placeholder="Enter company name" />
+                                    </div>
+
                                 </div>
+                                <div class="input-field job-responsibilities">
+                                    <label for="job-responsibilities">Job Responsibilities</label>
 
-                            </div>
-                            <div class="input-field location">
-                                <label for="location">Location</label>
+                                    <div class="input-part">
+                                        <input type="search" id="job-responsibilities" placeholder="Enter key words" />
+                                    </div>
 
-                                <div class="input-part">
-                                    <input type="text" id="location" placeholder="Enter suburb, town or city" />
                                 </div>
+                                <div class="input-field job-requirements">
+                                    <label for="job-requirements">Job Requirements</label>
 
+                                    <div class="input-part">
+                                        <input type="search" id="job-requirements" placeholder="Enter key words" />
+                                    </div>
+
+                                </div>
+                                <div class="input-field salary-from">
+                                    <label for="salary-from">Salary</label>
+
+                                    <div class="input-part">
+                                        <input class="low-salary" type="number" id="salary-from" placeholder="from" />
+                                        <span> -- </span>
+                                        <input class="up-salary" type="number" id="salary-to" placeholder="to" />
+                                    </div>
+
+                                </div>
                             </div>
-                            <input class="button search" type="submit" value="Search" title="Search" />
                         </div>
-                        <a class="float-right" href="#more-options" id="more-options">More Options</a>
-                        <a class="float-right" href="#" id="less-options">Less Options</a>
-                        <div id="more-search-options" class="more-search-options">
-                            <div class="input-field company-name">
-                                <label for="company-name">Company Name</label>
 
-                                <div class="input-part">
-                                    <input type="text" id="company-name" placeholder="Enter company name" />
-                                </div>
-
-                            </div>
-                            <div class="input-field job-responsibilities">
-                                <label for="job-responsibilities">Job Responsibilities</label>
-
-                                <div class="input-part">
-                                    <input type="text" id="job-responsibilities" placeholder="Enter key words" />
-                                </div>
-
-                            </div>
-                            <div class="input-field job-requirements">
-                                <label for="job-requirements">Job Requirements</label>
-
-                                <div class="input-part">
-                                    <input type="text" id="job-requirements" placeholder="Enter key words" />
-                                </div>
-
-                            </div>
-                            <div class="input-field salary-from">
-                                <label for="salary-from">Salary</label>
-
-                                <div class="input-part">
-                                    <input class="low-salary" type="number" id="salary-from" placeholder="from" />
-                                    <span> -- </span>
-                                    <input class="up-salary" type="number" id="salary-to" placeholder="to" />
-                                </div>
-
-                            </div>
-                        </div>
+                        <input class="button search" type="submit" value="Search" title="Search" />
                     </fieldset>
                 </form>
             </div>

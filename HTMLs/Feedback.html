@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./../CSSs/Template.css" />
     <link rel="stylesheet" type="text/css" href="./../CSSs/Feedback.css" />
+    <script src="./../JavaScripts/Helper.js"></script>
+    <script src="./../JavaScripts/Feedback.js"></script>
     <title>Feedback Page</title>
 </head>
 
@@ -22,6 +24,18 @@
             <a class="float-left nav-menu-item" href="Registration.html">REGISTRATION</a>
             <a class="float-left nav-menu-item current-page" href="Feedback.html">FEEDBACK</a>
             <a class="float-left nav-menu-item" href="AboutUs.html">ABOUT US</a>
+            
+            <div class="float-right dropdown">
+                <a href="javascript:void(0)" class="nav-menu-item">Menu</a>
+                <div class="dropdown-content">
+                    <a class="nav-menu-item" href="Home.html">HOME</a>
+                    <a class="nav-menu-item" href="JobSearch.html">JOB SEARCH</a>
+                    <a class="nav-menu-item" href="Employer.html">EMPLOYER</a>
+                    <a class="nav-menu-item" href="Registration.html">REGISTRATION</a>
+                    <a class="nav-menu-item current-page" href="Feedback.html">FEEDBACK</a>
+                    <a class="nav-menu-item" href="AboutUs.html">ABOUT US</a>
+                </div>
+            </div>
         </nav>
     </div>
 
@@ -36,25 +50,28 @@
                     <legend>Give Us Feedback</legend>
 
                     <div class="input-field">
-                        <label for="name">Your Name: </label><br/>
-                        <input id="name" type="text" placeholder="Your Name" />
+                        <label for="name">Your Name: </label><br />
+                        <input id="name" type="text" placeholder="Your Name" required />
                     </div>
 
                     <div class="input-field">
-                        <label for="contact-information">Your Contact Information: </label><br/>
+                        <label for="contact-information">Your Contact Information: </label><br />
                         <input id="contact-information" type="text" placeholder="E-Mail or Phone Number" />
                     </div>
 
                     <div class="input-field">
-                        <label for="title">Title: </label><br/>
-                        <input id="title" type="text" placeholder="Enter a title" />
+                        <label for="title">Title: </label><br />
+                        <input id="title" type="text" placeholder="Enter a title" required />
                     </div>
 
                     <div class="input-field">
-                        <label for="feedback-text">Feedback: </label><br/>
-                        <textarea id="feedback-text" placeholder="Enter your feedback"></textarea>
+                        <label for="feedback-text">Feedback: </label><br />
+                        <textarea id="feedback-text" placeholder="Enter your feedback" required></textarea>
                     </div>
-                    <input class="submit-button" type="submit" id="feedback" value="Feedback" />
+
+                    <div class="submit">
+                        <input class="submit-button" type="submit" id="feedback" value="Feedback" />
+                    </div>
                 </fieldset>
             </form>
         </div>

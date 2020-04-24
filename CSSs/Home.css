@@ -6,7 +6,7 @@
 
 .search-form .form {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .search-form .form * {
@@ -53,11 +53,13 @@
   background: url(../images/home_background.png) 0/cover;
   justify-content: flex-end;
 }
+
 .company-mission .mission-text {
   width: 270px;
   padding-top: 50px;
   padding-right: 2%;
 }
+
 .company-mission .mission-text * {
   white-space: nowrap;
   font-weight: bold;
@@ -68,11 +70,36 @@
 
 .company-mission .mission-text mark {
   color: azure;
-  padding: 2px;    
+  padding: 2px;
   border-radius: 2px;
   display: inline-block;
   padding-left: 10px;
   padding-right: 10px;
   margin: 9px 0 0;
-  background-color: #e60278!important;
+  background-color: #e60278 !important;
+}
+
+@media only screen and (max-width: 900px) {
+  .search-form {
+    width: 100%;
+  }
+
+  .search-form .form {
+    display: grid;
+  }
+
+  .input-field {
+    width: 100%;
+  }
+
+  .input-field.job-title,
+  .input-field.job-classification,
+  .input-field.job-location {
+    margin-right: 0;
+  }
+
+  .search-form .button.search {
+    margin: 5px 0px;
+    line-height: 26px;
+  }
 }
