@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./../CSSs/Template.css" />
     <link rel="stylesheet" type="text/css" href="./../CSSs/Employer.css" />
-    <script src="./../JavaScripts/Helper.js"></script>
-    <script src="./../JavaScripts/Employer.js"></script>
+    <script type="text/javascript" type="text/javascript" src="./../Data/JobList.json"></script>
+    <script type="text/javascript" src="./../JavaScripts/Helper.js"></script>
+    <script type="text/javascript" src="./../JavaScripts/Employer.js"></script>
     <title>Employer Page</title>
 </head>
 
@@ -54,7 +55,7 @@
         </div>
 
         <div class="col-5 add-new-job">
-            <form>
+            <form id="publish-form">
                 <fieldset>
                     <legend>New Job</legend>
 
@@ -95,7 +96,7 @@
                             pattern="((021|022|025|027|028|029)\d{6,8})|([^@\s]+@[^@\s]+\.(my|com|net))" required />
                     </div>
                     <div class="submit">
-                        <input type="submit" id="publish" value="Publish" />
+                        <input type="submit" id="publishButton" value="Publish" />
                     </div>
                 </fieldset>
             </form>
@@ -103,21 +104,11 @@
 
         <div class="col-5 job-list">
             <h1 class="title">Published Jobs</h1>
-            <table>
+            <table id="job-list-table">
                 <tr>
                     <th>Job Title</th>
                     <th>Publishing Date</th>
                     <th>Operation</th>
-                </tr>
-                <tr>
-                    <td class="job-title">Job 1</td>
-                    <td class="publishing-date"><time>24 March 2020</time></td>
-                    <td class="operation"><button id="delete-job-1">Delete</button></td>
-                </tr>
-                <tr>
-                    <td class="job-title">Job 2</td>
-                    <td class="publishing-date"><time>29 March 2020</time></td>
-                    <td class="operation"><button id="delete-job-2">Delete</button></td>
                 </tr>
             </table>
         </div>

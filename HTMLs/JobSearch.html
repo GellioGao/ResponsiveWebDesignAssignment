@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./../CSSs/Template.css" />
     <link rel="stylesheet" type="text/css" href="./../CSSs/JobSearch.css" />
-    <script src="./../JavaScripts/Helper.js"></script>
-    <script src="./../JavaScripts/JobSearch.js"></script>
+    <script type="text/javascript" type="text/javascript" src="./../Data/JobList.json"></script>
+    <script type="text/javascript" src="./../JavaScripts/Helper.js"></script>
+    <script type="text/javascript" src="./../JavaScripts/JobSearch.js"></script>
     <title>Job Search Page</title>
 </head>
 
@@ -46,7 +47,7 @@
 
         <div class="col-10">
             <div class="search-form">
-                <form>
+                <form id="search-form">
                     <fieldset class="no-border">
 
                         <div class="search-options">
@@ -117,110 +118,21 @@
                             </div>
                         </div>
 
-                        <input class="button search" type="submit" value="Search" title="Search" />
+                        <input class="button search" id="searchButton" type="submit" value="Search" title="Search" />
                     </fieldset>
                 </form>
             </div>
 
 
             <div class="job-list">
-                <table class="job-list-table">
+                <table class="job-list-table" id="job-list-table">
                     <tr>
                         <th>Job Title</th>
                         <th>Description</th>
                         <th>Publishing Date</th>
                         <th>Operation</th>
                     </tr>
-                    <tr>
-                        <td class="job-title">Job 1</td>
-                        <td class="description">Description of Job 1</td>
-                        <td class="publishing-date"><time>24 March 2020</time></td>
-                        <td class="operation">
-                            <a href="JobDetail.html"><button id="detail-job-1">Detail</button></a>
-                            <button id="apply-job-1">Apply</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="job-title">Job 2</td>
-                        <td class="description">Description of Job 2</td>
-                        <td class="publishing-date"><time>29 March 2020</time></td>
-                        <td class="operation">
-                            <a href="JobDetail.html"><button id="detail-job-2">Detail</button></a>
-                            <button id="apply-job-2">Apply</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="job-title">Job 2</td>
-                        <td class="description">Description of Job 2</td>
-                        <td class="publishing-date"><time>29 March 2020</time></td>
-                        <td class="operation">
-                            <a href="JobDetail.html"><button id="detail-job-2">Detail</button></a>
-                            <button id="apply-job-2">Apply</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="job-title">Job 2</td>
-                        <td class="description">Description of Job 2</td>
-                        <td class="publishing-date"><time>29 March 2020</time></td>
-                        <td class="operation">
-                            <a href="JobDetail.html"><button id="detail-job-2">Detail</button></a>
-                            <button id="apply-job-2">Apply</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="job-title">Job 2</td>
-                        <td class="description">Description of Job 2</td>
-                        <td class="publishing-date"><time>29 March 2020</time></td>
-                        <td class="operation">
-                            <a href="JobDetail.html"><button id="detail-job-2">Detail</button></a>
-                            <button id="apply-job-2">Apply</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="job-title">Job 2</td>
-                        <td class="description">Description of Job 2</td>
-                        <td class="publishing-date"><time>29 March 2020</time></td>
-                        <td class="operation">
-                            <a href="JobDetail.html"><button id="detail-job-2">Detail</button></a>
-                            <button id="apply-job-2">Apply</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="job-title">Job 2</td>
-                        <td class="description">Description of Job 2</td>
-                        <td class="publishing-date"><time>29 March 2020</time></td>
-                        <td class="operation">
-                            <a href="JobDetail.html"><button id="detail-job-2">Detail</button></a>
-                            <button id="apply-job-2">Apply</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="job-title">Job 2</td>
-                        <td class="description">Description of Job 2</td>
-                        <td class="publishing-date"><time>29 March 2020</time></td>
-                        <td class="operation">
-                            <a href="JobDetail.html"><button id="detail-job-2">Detail</button></a>
-                            <button id="apply-job-2">Apply</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="job-title">Job 2</td>
-                        <td class="description">Description of Job 2</td>
-                        <td class="publishing-date"><time>29 March 2020</time></td>
-                        <td class="operation">
-                            <a href="JobDetail.html"><button id="detail-job-2">Detail</button></a>
-                            <button id="apply-job-2">Apply</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="job-title">Job 2</td>
-                        <td class="description">Description of Job 2</td>
-                        <td class="publishing-date"><time>29 March 2020</time></td>
-                        <td class="operation">
-                            <a href="JobDetail.html"><button id="detail-job-2">Detail</button></a>
-                            <button id="apply-job-2">Apply</button>
-                        </td>
-                    </tr>
+                    
                 </table>
             </div>
         </div>

@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./../CSSs/Template.css" />
     <link rel="stylesheet" type="text/css" href="./../CSSs/Home.css" />
-    <script src="./../JavaScripts/Helper.js"></script>
-    <script src="./../JavaScripts/Home.js"></script>
+    <script type="text/javascript" src="./../JavaScripts/Helper.js"></script>
+    <script type="text/javascript" src="./../JavaScripts/Home.js"></script>
     <title>Home Page</title>
 </head>
 
@@ -48,23 +48,23 @@
 
         <div class="col-10">
             <div class="search-form">
-                <form>
+                <form action="JobSearch.html" method="GET">
                     <fieldset class="no-border">
                         <div class="form">
                             <div class="input-field job-title">
                                 <label for="job-title">Job Title: </label>
-                                <input id="job-title" type="search" placeholder="Job Title" required />
+                                <input id="job-title" type="search" name="job-title" placeholder="Job Title" required />
                             </div>
 
                             <div class="input-field job-classification">
                                 <label for="job-classification">Specialization: </label>
-                                <input id="job-classification" type="search" placeholder="Any Classification"
+                                <input id="job-classification" type="search" name="job-classification" placeholder="Any Classification"
                                     required />
                             </div>
 
                             <div class="input-field job-location">
                                 <label for="job-location">Location: </label>
-                                <input id="job-location" type="search" placeholder="Enter suburb, town and city"
+                                <input id="job-location" type="search" name="job-location" placeholder="Enter suburb, town and city"
                                     required />
                             </div>
                             <input class="button search" type="submit" value="Search Job" />
