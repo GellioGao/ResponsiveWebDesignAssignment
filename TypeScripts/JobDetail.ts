@@ -1,19 +1,4 @@
-interface Description {
-    id: string;
-    description: string;
-}
-
-interface JobDetail extends JobItem {
-    bulletPoints: string[];
-    advertiser: Description;
-    location: string;
-    area: string;
-    workType: string;
-    classification: Description;
-    subClassification: Description;
-    salary: string;
-}
-
+let job_title: HTMLHeadingElement;
 let company_name: HTMLParagraphElement;
 let company_address: HTMLParagraphElement;
 let job_responsibilities: HTMLParagraphElement;
@@ -25,6 +10,7 @@ let jobDetail: JobDetail;
 
 
 function loadJob(job: JobDetail){
+    job_title.innerText = job.jobTitle;
     company_name.innerText = companyName(job);
     company_address.innerText = companyAddress(job);
     job_responsibilities.innerText = responsibilities(job);
@@ -34,6 +20,7 @@ function loadJob(job: JobDetail){
 }
 
 window.onload = () => {
+    job_title = document.getElementById("job-title") as HTMLHeadingElement;
     company_name = document.getElementById("company-name") as HTMLParagraphElement;
     company_address = document.getElementById("company-address") as HTMLParagraphElement;
     job_responsibilities = document.getElementById("job-responsibilities") as HTMLParagraphElement;

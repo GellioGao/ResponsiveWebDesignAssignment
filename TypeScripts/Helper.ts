@@ -11,6 +11,22 @@ interface JobItem {
     date: Date;
 }
 
+interface Description {
+    id: string;
+    description: string;
+}
+
+interface JobDetail extends JobItem {
+    bulletPoints: string[];
+    advertiser: Description;
+    location: string;
+    area: string;
+    workType: string;
+    classification: Description;
+    subClassification: Description;
+    salary: string;
+}
+
 function getParameter(name: string): string {
     let url = new URL(window.location.href);
     let parameter = url.searchParams.get(name);
@@ -28,7 +44,7 @@ function loadJobData<TJob extends JobItem>(): Array<TJob> {
 
 function refreshJobList<TJob extends JobItem>(tableId: string, jobs: Array<TJob>, htmlBuilder: (job: TJob) => string) {
     let table = (document.getElementById(tableId) as HTMLTableElement).tBodies[0];
-    while(table.rows.length > 1 ){
+    while (table.rows.length > 1) {
         table.deleteRow(1);
     }
 
