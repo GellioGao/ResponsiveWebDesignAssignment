@@ -53,17 +53,29 @@ textarea {
     border-collapse: collapse;
 }
 
-.job-list .job-title {
+.job-list .job-title,
+.job-list .job-title-header {
     width: 55%;
+}
+
+.job-list .publishing-date,
+.job-list .publishing-date-header {
+    width: 30%;
+}
+
+.job-list .operation,
+.job-list .operation-header {
+    width: 15%;
+}
+
+.job-list .job-title {
     text-align: left;
 }
 
 .job-list .publishing-date {
-    width: 30%;
     text-align: center;
 }
 
 .job-list .operation {
-    width: 15%;
     text-align: center;
 }

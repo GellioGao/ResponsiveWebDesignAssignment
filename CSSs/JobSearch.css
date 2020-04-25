@@ -114,24 +114,41 @@ td {
     width: 100%;
 }
 
+.job-list .job-title,
+.job-list .job-title-header {
+    width: 20%;
+}
+
+.job-list .description,
+.job-list .description-header {
+    width: 50%;
+}
+
+.job-list .publishing-date,
+.job-list .publishing-date-header {
+    width: 15%;
+}
+
+.job-list .operation,
+.job-list .operation-header {
+    width: 15%;
+}
+
 .job-list .job-title {
     text-align: left;
-    width: 20%;
+    font-weight: bold;
 }
 
 .job-list .description {
     text-align: left;
-    width: 50%;
 }
 
 .job-list .publishing-date {
     text-align: center;
-    width: 15%;
 }
 
 .job-list .operation {
     text-align: center;
-    width: 15%;
 }
 
 
