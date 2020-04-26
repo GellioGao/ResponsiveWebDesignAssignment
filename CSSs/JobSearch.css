@@ -63,7 +63,6 @@
 .button.search {
     width: 10%;
     min-width: 90px;
-    line-height: 26px;
     margin: 5px auto;
 }
 
@@ -152,7 +151,7 @@ td {
 }
 
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 768px) {
     .search-options {
         width: 100%;
         margin: 20px 0px;
@@ -193,7 +192,7 @@ td {
     }
 
     .search-form .button.search {
+        width: 100%;;
         margin: 5px 0px;
-        line-height: 26px;
     }
 }

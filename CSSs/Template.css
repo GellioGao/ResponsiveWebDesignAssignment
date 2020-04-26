@@ -86,6 +86,8 @@ input[type=reset] {
     background-color: blueviolet;
     border: lightblue 2px solid;
     cursor: pointer;
+    width: 100%;
+    line-height: 26px;
 }
 
 button:hover,
@@ -273,12 +275,14 @@ body {
 }
 
 .dropdown-content {
-    opacity: 0;
+    visibility: hidden;
     height: 0;
+    transition: visibility 1s 100ms, height 1s 100ms;
     position: absolute;
     background-color: gray;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    top: 76px;
     right: 0px;
     overflow: inherit;
 }
@@ -296,18 +300,25 @@ body {
 }
 
 .dropdown:hover .dropdown-content {
-    opacity: 1;
-    height: auto;
-    transition: opacity 1s, height 1s;
+    visibility: visible;
+    height: 350px;
 }
 
 @media only screen and (max-width: 1100px) {
+
     .menu a.nav-menu-item {
         font-size: 0.8rem;
     }
 }
 
 @media only screen and (max-width: 900px) {
+
+    .menu a.nav-menu-item {
+        font-size: 0.6rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
 
     .col-1,
     .col-2,
@@ -323,12 +334,6 @@ body {
         width: 100%;
     }
 
-    .menu a.nav-menu-item {
-        font-size: 0.6rem;
-    }
-}
-
-@media only screen and (max-width: 768px) {
     .menu>a.nav-menu-item {
         display: none;
     }

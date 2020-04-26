@@ -1,9 +1,23 @@
+.login-form {
+    display: flex;
+    justify-content: center;
+}
+
 .login-form form {
     margin: 50px auto;
+    width: 70%;
+    display: inherit;
+    justify-content: inherit;
+}
+
+.login-form form fieldset {
+    width: 100%;
+    display: inherit;
 }
 
 .input-field {
-    width: 60%;
+    width: 500px;
+    flex-wrap: nowrap;
 }
 
 .input-field label {
@@ -11,5 +25,29 @@
 }
 
 .input-field input {
-    width: 70%;
+    width: 100%;
+}
+
+.submit {
+    width: 500px;
+}
+
+.login-button {
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    .input-field {
+        width: 100%;
+        flex-direction: column;
+        align-items: inherit;
+    }
+
+    .input-field input {
+        width: 100%;
+    }
+
+    .submit {
+        width: 100%;
+    }
 }

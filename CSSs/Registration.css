@@ -8,19 +8,11 @@
 }
 
 .input-field label {
-    width: 20%;
-    min-width: 140px;
+    min-width: 24%;
 }
 
 .input-field input {
     width: 75%;
-}
-
-@media only screen and (max-width: 1100px) {
-    .input-field input {
-        width: 100%;
-    }
-
 }
 
 .confirm-password {
@@ -37,13 +29,23 @@
 }
 
 .input-field>#confirm-password:invalid:not(:placeholder-shown)+.passwords-not-match {
-    margin-left: 5px;
+    margin-left: calc(24% + 5px);
     max-height: 200px;
 }
 
-@media only screen and (min-width: 1100px) {
+@media only screen and (max-width: 1100px) {
+    .input-field input {
+        width: 100%;
+    }
+
     .input-field>#confirm-password:invalid:not(:placeholder-shown)+.passwords-not-match {
-        margin-left: calc(20% + 5px);
+        margin-left: 5px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .register-form form {
+        max-width: 100%;
     }
 }
 

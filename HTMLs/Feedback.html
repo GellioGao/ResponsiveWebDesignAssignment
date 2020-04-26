@@ -24,7 +24,7 @@
             <a class="float-left nav-menu-item" href="Registration.html">REGISTRATION</a>
             <a class="float-left nav-menu-item current-page" href="Feedback.html">FEEDBACK</a>
             <a class="float-left nav-menu-item" href="AboutUs.html">ABOUT US</a>
-            
+
             <div class="float-right dropdown">
                 <a href="javascript:void(0)" class="nav-menu-item">Menu</a>
                 <div class="dropdown-content">
@@ -56,7 +56,9 @@
 
                     <div class="input-field">
                         <label for="contact-information">Your Contact Information: </label><br />
-                        <input id="contact-information" type="text" placeholder="E-Mail or Phone Number" />
+                        <input id="contact-information" type="text"
+                            pattern="((021|022|025|027|028|029)\d{6,8})|([^@\s]+@[^@\s]+\.(my|com|net))"
+                            placeholder="E-Mail or Phone Number" />
                     </div>
 
                     <div class="input-field">

@@ -9,13 +9,9 @@
   align-items: flex-end;
 }
 
-.search-form .form * {
-  float: left;
-}
-
 .search-form .button.search {
   margin: 5px 0 5px 20px;
-  line-height: 26px;
+  flex-basis: 10%;
 }
 
 .input-field input {
@@ -79,7 +75,7 @@
   background-color: #e60278 !important;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 768px) {
   .search-form {
     width: 100%;
   }
@@ -100,6 +96,5 @@
 
   .search-form .button.search {
     margin: 5px 0px;
-    line-height: 26px;
   }
 }
