@@ -1,0 +1,12 @@
+version: '3'
+services:
+  rwda-front-end:
+    build: .
+    ports:
+      - "8081:80"
+  rwda-db:
+    image: 'mysql'
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Passw0rd

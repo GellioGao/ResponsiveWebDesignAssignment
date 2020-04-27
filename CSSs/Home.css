@@ -46,7 +46,7 @@
   display: flex;
   height: 252px;
   width: 100%;
-  background: url(../images/home_background.png) 0/cover;
+  background: url(../Images/home_background.png) 0/cover;
   justify-content: flex-end;
 }
 
