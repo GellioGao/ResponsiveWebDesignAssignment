@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="../Images/Logo.png"/>
+    <link rel="shortcut icon" type="image/png" href="../Images/Logo.png" />
     <link rel="stylesheet" type="text/css" href="./../CSSs/Template.css" />
     <link rel="stylesheet" type="text/css" href="./../CSSs/Registration.css" />
     <script type="text/javascript" src="./../JavaScripts/Helper.js"></script>
@@ -25,7 +25,7 @@
             <a class="float-left nav-menu-item current-page" href="Registration.html">REGISTRATION</a>
             <a class="float-left nav-menu-item" href="Feedback.html">FEEDBACK</a>
             <a class="float-left nav-menu-item" href="AboutUs.html">ABOUT US</a>
-            
+
             <div class="float-right dropdown">
                 <a href="javascript:void(0)" class="nav-menu-item">Menu</a>
                 <div class="dropdown-content">
@@ -42,36 +42,49 @@
 
     <div class="content">
 
+        <div id="loading" class="col-12 loaded">
+            <div class="lds-roller">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
         <div class="col-1">
         </div>
 
         <div class="col-10 register-form">
-            <form action="Employer.html#logged-in">
+            <form id="registration-form">
                 <fieldset class="no-border">
                     <legend>Company Information</legend>
 
                     <div class="input-field">
                         <label for="company-name">Company Name:</label>
-                        <input type="text" id="company-name" placeholder="Enter your company name here"
+                        <input type="text" id="company-name" name="Company" placeholder="Enter your company name here"
                             pattern="[a-zA-Z][a-zA-Z ]*[a-zA-Z]" required />
                     </div>
 
                     <div class="input-field">
                         <label for="business-area">Business Area:</label>
-                        <input type="text" id="business-area" placeholder="Enter your business area here"
-                            pattern="[a-zA-Z][a-zA-Z ]*[a-zA-Z]" required />
+                        <input type="text" id="business-area" name="BusinessArea"
+                            placeholder="Enter your business area here" pattern="[a-zA-Z][a-zA-Z ]*[a-zA-Z]" required />
                     </div>
 
                     <div class="input-field">
                         <label for="business-status">Business Status:</label>
                         <div class="radio-options">
                             <div class="radio">
-                                <input type="radio" checked id="business-status-government" name="business-status"
+                                <input type="radio" checked id="business-status-government" name="BusinessStatus"
                                     value="Government Sector" />
                                 <label for="business-status-government">Government Sector</label>
                             </div>
                             <div class="radio">
-                                <input type="radio" id="business-status-private" name="business-status"
+                                <input type="radio" id="business-status-private" name="BusinessStatus"
                                     value="Private Sector" />
                                 <label for="business-status-private">Private Sector</label>
                             </div>
@@ -80,36 +93,38 @@
 
                     <div class="input-field">
                         <label for="address">Address:</label>
-                        <input type="text" id="address" placeholder="Enter your company address here" required />
+                        <input type="text" id="address" name="Address" placeholder="Enter your company address here"
+                            required />
                     </div>
 
                     <div class="input-field">
                         <label for="phone-number">Phone Number:</label>
-                        <input type="tel" id="phone-number" placeholder="Enter your phone number here"
-                            pattern="(021|022|025|027|028|029)\d{6,8}" />
+                        <input type="tel" id="phone-number" name="Phone" placeholder="Enter your phone number here"
+                            pattern="(021|022|025|027|028|029|0800|04)\d{6,8}" />
                     </div>
 
                     <div class="input-field">
                         <label for="email-address">Email Address:</label>
-                        <input type="email" id="email-address" placeholder="Enter your email here" required />
+                        <input type="email" id="email-address" name="Email" placeholder="Enter your email here"
+                            required />
                     </div>
 
                     <div class="input-field">
                         <label for="username">Username:</label>
-                        <input type="text" id="username" placeholder="Enter your username here" pattern="[a-zA-Z]+"
-                            minlength="6" required />
+                        <input type="text" id="username" name="Username" placeholder="Enter your username here"
+                            pattern="[a-zA-Z0-9_]+" minlength="6" required />
                     </div>
 
                     <div class="input-field">
                         <label for="password">Password:</label>
-                        <input type="password" id="password" placeholder="Enter your password here" pattern="[a-zA-Z]+"
-                            minlength="6" required />
+                        <input type="password" id="password" name="Password" placeholder="Enter your password here"
+                            pattern="[a-zA-Z0-9@]+" minlength="6" required />
                     </div>
 
                     <div class="input-field confirm-password">
                         <label for="confirm-password">Confirm Password:</label>
                         <input type="password" id="confirm-password" placeholder="Enter your password here again"
-                            pattern="[a-zA-Z]+" minlength="6" required />
+                            pattern="[a-zA-Z0-9@]+" minlength="6" required />
                         <div class="requirements passwords-not-match">
                             <p id="confirm-password-message"></p>
                         </div>

@@ -28,6 +28,20 @@
     width: 100%;
 }
 
+.submit>.login-message {
+    visibility: hidden;
+    height: 0;
+}
+
+#login-form.login-failed .submit>.login-message {
+    visibility: visible;
+    height: 18px;
+}
+
+.login-message>span {
+    color: red;
+}
+
 .submit {
     width: 500px;
 }

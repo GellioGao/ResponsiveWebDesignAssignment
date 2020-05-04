@@ -1,5 +1,12 @@
-#logged-in:not(.not-login),
-#logged-in:target {
+.nav-menu-item.logout {
+    visibility: collapse;
+}
+
+.nav-menu-item.logout.logged-in {
+    visibility: visible;
+}
+
+#logged-in:not(.not-login) {
     display: none;
 }
 

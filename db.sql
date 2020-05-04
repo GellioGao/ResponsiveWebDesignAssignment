@@ -1,7 +1,7 @@
 CREATE DATABASE `rwdassignment` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 
 CREATE TABLE `rwdassignment`.`employers` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `registration_date` DATETIME NOT NULL,
   `business_area` VARCHAR(45) NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE `rwdassignment`.`employers` (
   PRIMARY KEY (`id`));
 
 CREATE TABLE `rwdassignment`.`jobs` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `employer_id` INT NOT NULL,
   `title` VARCHAR(100) NOT NULL,
   `published_date` DATETIME NOT NULL,
@@ -36,11 +36,10 @@ CREATE TABLE `rwdassignment`.`jobs` (
     ON UPDATE NO ACTION);
 
 CREATE TABLE `rwdassignment`.`feedback` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(150) NULL,
   `name` VARCHAR(50) NULL,
   `date` DATETIME NOT NULL,
   `contact` VARCHAR(50) NULL,
   `feedback_content` TEXT(500) NULL,
-  `feedbackcol` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`));

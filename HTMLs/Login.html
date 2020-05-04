@@ -42,27 +42,43 @@
 
     <div class="content">
 
+        <div id="loading" class="col-12 loaded">
+            <div class="lds-roller">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
         <div class="col-2">
         </div>
 
         <div class="col-8 login-form">
-            <form action="Employer.html#logged-in">
+            <form id="login-form">
                 <fieldset class="no-border">
                     <legend>Employer Login</legend>
 
                     <div class="input-field">
                         <label for="username">Username:</label>
-                        <input type="text" id="username" placeholder="Enter your company name here" pattern="[a-zA-Z]+"
+                        <input type="text" id="username" placeholder="Enter your company name here" pattern="[a-zA-Z0-9_]+"
                             minlength="6" required />
                     </div>
 
                     <div class="input-field">
                         <label for="password">Password:</label>
-                        <input type="password" id="password" placeholder="Enter your password here" pattern="[a-zA-Z]+"
+                        <input type="password" id="password" placeholder="Enter your password here" pattern="[a-zA-Z0-9@]+"
                             minlength="6" required />
                     </div>
 
                     <div class="submit">
+                        <div class="login-message">
+                            <span>Username or Password is incorrect.</span>
+                        </div>
                         <input class="login-button" type="submit" id="login" value="Login" />
                     </div>
                 </fieldset>

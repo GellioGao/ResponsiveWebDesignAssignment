@@ -8,10 +8,25 @@ let contact_information: HTMLParagraphElement;
 
 let jobDetail: JobDetail;
 
+function companyAddress(job: JobDetail): string {
+    return job.address;
+}
 
-function loadJob(job: JobDetail){
-    job_title.innerText = job.jobTitle;
-    company_name.innerText = companyName(job);
+function responsibilities(job: JobDetail): string {
+    return job.responsibilities;
+}
+
+function requirements(job: JobDetail): string {
+    return job.requirements;
+}
+
+function contactInformation(job: JobDetail): string {
+    return job.contact;
+}
+
+function loadJob(job: JobDetail) {
+    job_title.innerText = job.title;
+    company_name.innerText = job.employer;
     company_address.innerText = companyAddress(job);
     job_responsibilities.innerText = responsibilities(job);
     job_requirements.innerText = requirements(job);
@@ -28,8 +43,23 @@ window.onload = () => {
     job_salary = document.getElementById("job-salary") as HTMLParagraphElement;
     contact_information = document.getElementById("contact-information") as HTMLParagraphElement;
 
-    let id = Number.parseInt(getParameter('id'));
-    jobDetail = getJob<JobDetail>(id);
 
-    loadJob(jobDetail);
+    let id = Number.parseInt(getParameter('id'));
+    getJobAsync<JobDetail>(id, (job: JobDetail, _: string) => {
+        loadJob(job);
+    });
+}
+
+function getJobAsync<TJob extends JobItem>(id: number, onComplete: (job: TJob, queryString: string) => void, onFailed: (message: string) => void = null): void {
+    let parameters = new Map<string, string>();
+    parameters.set('id', `${id}`);
+    loadOneJobDataAsync<TJob>(parameters, onComplete, onFailed);
+}
+
+function loadOneJobDataAsync<TJob extends JobItem>(parameters: Map<string, string>, onLoaded: (jobs: TJob, queryString: string) => void, onFailed: (message: string) => void = null): void {
+    let jsonUrl = makeUrl('Jobs.php', RequestFor.PHP, parameters);
+    getJsonAsync(jsonUrl.url, (response) => {
+        let Job = JSON.parse(response) as TJob;
+        onLoaded(Job, jsonUrl.queryString);
+    }, onFailed);
 }

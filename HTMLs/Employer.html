@@ -7,7 +7,6 @@
     <link rel="shortcut icon" type="image/png" href="../Images/Logo.png"/>
     <link rel="stylesheet" type="text/css" href="./../CSSs/Template.css" />
     <link rel="stylesheet" type="text/css" href="./../CSSs/Employer.css" />
-    <script type="text/javascript" type="text/javascript" src="./../Data/JobList.json"></script>
     <script type="text/javascript" src="./../JavaScripts/Helper.js"></script>
     <script type="text/javascript" src="./../JavaScripts/Employer.js"></script>
     <title>Employer Page</title>
@@ -26,6 +25,7 @@
             <a class="float-left nav-menu-item" href="Registration.html">REGISTRATION</a>
             <a class="float-left nav-menu-item" href="Feedback.html">FEEDBACK</a>
             <a class="float-left nav-menu-item" href="AboutUs.html">ABOUT US</a>
+            <a class="float-right nav-menu-item logout" href="javascript:logout();">LOGOUT</a>
             
             <div class="float-right dropdown">
                 <a href="javascript:void(0)" class="nav-menu-item">Menu</a>
@@ -36,6 +36,7 @@
                     <a class="nav-menu-item" href="Registration.html">REGISTRATION</a>
                     <a class="nav-menu-item" href="Feedback.html">FEEDBACK</a>
                     <a class="nav-menu-item" href="AboutUs.html">ABOUT US</a>
+                    <a class="nav-menu-item logout" href="javascript:logout();">LOGOUT</a>
                 </div>
             </div>
         </nav>
@@ -49,6 +50,19 @@
             <div class="tips">
                 <p>Go to Login or Registration page and click the Login button or the Register button, then you can see
                     the page again.</p>
+            </div>
+        </div>
+
+        <div id="loading" class="col-12 loaded">
+            <div class="lds-roller">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
         </div>
 
@@ -88,13 +102,13 @@
 
                     <div class="input-field">
                         <label for="salary">Salary</label>
-                        <input type="number" id="salary" placeholder="Enter the salary" required />
+                        <input type="number" id="salary" placeholder="Enter the salary" max="99999.99" min="0" required />
                     </div>
 
                     <div class="input-field">
                         <label for="contact-info">Contact Number/Email</label>
                         <input type="text" id="contact-info" placeholder="Enter phone number or email here"
-                            pattern="((021|022|025|027|028|029)\d{6,8})|([^@\s]+@[^@\s]+\.(my|com|net))" required />
+                            pattern="((021|022|025|027|028|029|0800|04)\d{6,8})|([^@\s]+@[^@\s]+\.(my|com|net|nz))" required />
                     </div>
                     <div class="submit">
                         <input type="submit" id="publishButton" value="Publish" />
