@@ -72,7 +72,7 @@
   padding-left: 10px;
   padding-right: 10px;
   margin: 9px 0 0;
-  background-color: #e60278 !important;
+  background-color: #e60278;
 }
 
 @media only screen and (max-width: 768px) {
@@ -96,5 +96,9 @@
 
   .search-form .button.search {
     margin: 5px 0px;
+  }
+
+  .company-mission {
+    background: url(../Images/home_background.png) -150px/auto;
   }
 }

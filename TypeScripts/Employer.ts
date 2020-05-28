@@ -6,7 +6,6 @@ let publishedJobItemTemplate = (job: JobItem): string => {
     </tr>`;
 };
 
-
 let publishButton: HTMLInputElement;
 let publishForm: HTMLFormElement;
 let publishedJobListTable: HTMLTableElement;
@@ -16,17 +15,19 @@ let publishedJobs: Array<JobDetail>;
 let companyName: string;
 let companyId: number;
 let companySessionId: string;
-let storageKey = `company`;
 
 window.onload = () => {
-    let logged_in_div = document.getElementById("logged-in") as HTMLDivElement;
-    let isLoggedIn = checkLogin();
+    let isLoggedIn = true;
+    showLogoutButtonsIfLoggedIn({
+        onNotLogin: () => {
+            let logged_in_div = document.getElementById("logged-in") as HTMLDivElement;
+            logged_in_div.classList.add("not-login");
+            isLoggedIn = false;
+        }
+    });
     if (!isLoggedIn) {
-        logged_in_div.classList.add("not-login");
         return;
     }
-
-    toggleLogoutButtons();
 
     publishButton = document.getElementById('publishButton') as HTMLInputElement;
     publishForm = document.getElementById('publish-form') as HTMLFormElement;
@@ -56,14 +57,6 @@ window.onload = () => {
 
 }
 
-function toggleLogoutButtons() {
-    let logoutButtons = document.getElementsByClassName('nav-menu-item logout');
-    for (let index = 0; index < logoutButtons.length; index++) {
-        const logoutButton = logoutButtons[index];
-        logoutButton.classList.toggle('logged-in');
-    }
-}
-
 function setCompanyInfo() {
     let json = sessionStorage.getItem(storageKey);
     let companyInfo = JSON.parse(json) as CompanyWithSession;
@@ -77,31 +70,6 @@ function resetForm() {
     let company_name = document.getElementById("company-name") as HTMLInputElement;
     company_name.value = companyName;
     company_name.readOnly = true;
-}
-
-function checkLogin(): boolean {
-    let data = sessionStorage.getItem(storageKey);
-    if (!data) {
-        return false;
-    }
-    let companyInfo = JSON.parse(data) as CompanyWithSession;
-    if (!companyInfo || !companyInfo.id || !companyInfo.name || !companyInfo.sessionId) {
-        return false;
-    }
-    return true;
-}
-
-function logout() {
-    sessionStorage.removeItem(storageKey);
-    let parameters = new Map<string, string>();
-    parameters.set('sessionId', `${companySessionId}`);
-    let jsonUrl = makeUrl('Employer.php', RequestFor.PHP, parameters);
-    deleteJsonAsync(jsonUrl.url, null, (_) => {
-        window.location.href = 'Home.html';
-        resetForm();
-    }, _ => {
-        window.location.href = 'Home.html';
-    });
 }
 
 function getCompanyInfo(companyId: number, onComplete: (companyInfo: Company) => void, onFailed: (message: string) => void = null): void {
@@ -179,7 +147,7 @@ function publishNewJob() {
         let row = document.getElementById(`job-row-${job.id}`);
         row.classList.add('added');
         resetForm();
-    }, (_) =>{
+    }, (_) => {
         alert('Try again.');
     });
 }

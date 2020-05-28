@@ -1,11 +1,3 @@
-.nav-menu-item.logout {
-    visibility: collapse;
-}
-
-.nav-menu-item.logout.logged-in {
-    visibility: visible;
-}
-
 #logged-in:not(.not-login) {
     display: none;
 }

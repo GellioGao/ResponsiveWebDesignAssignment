@@ -1,3 +1,5 @@
+let storageKey = `company`;
+
 enum RequestFor {
     HTML = 'HTMLs',
     JSON = 'Data',
@@ -89,9 +91,12 @@ function deleteJsonAsync(url: string, content: string, onResponse: (response: st
 }
 
 function jsonRequestAsync(url: string, method: RequestMethods, content: string, onResponse: (response: string) => void, onFailed: (message: string) => void): void {
+    let loading = document.getElementById("loading") as HTMLDivElement;
+    if (loading && loading.classList.contains('loaded')) {
+        loading.classList.remove('loaded');
+    }
     var xhr = new XMLHttpRequest();
     xhr.open(method, url, true);
-    let loading = document.getElementById("loading") as HTMLDivElement;
     xhr.onload = (ev: ProgressEvent<EventTarget>) => {
         if (xhr.status === 200) {
             try {
@@ -118,10 +123,6 @@ function jsonRequestAsync(url: string, method: RequestMethods, content: string, 
         if (loading && !loading.classList.contains('loaded')) {
             loading.classList.add('loaded');
         }
-    }
-
-    if (loading && loading.classList.contains('loaded')) {
-        loading.classList.remove('loaded');
     }
     xhr.send(content);
 }
@@ -162,4 +163,64 @@ function getSelectedRadioByName(name: string): HTMLInputElement {
             return radios[i];
         }
     }
+}
+
+function checkLogin(): boolean {
+    let data = sessionStorage.getItem(storageKey);
+    if (!data) {
+        return false;
+    }
+    let companyInfo = JSON.parse(data) as CompanyWithSession;
+    if (!companyInfo || !companyInfo.id || !companyInfo.name || !companyInfo.sessionId) {
+        return false;
+    }
+    return true;
+}
+
+function toggleClassNameByClass(target: string, className: string, toggle: boolean) {
+    let elements = document.getElementsByClassName(target);
+    for (let index = 0; index < elements.length; index++) {
+        const element = elements[index];
+        if (toggle && !element.classList.contains(className)) {
+            element.classList.add(className);
+        }
+        if (!toggle && element.classList.contains(className)) {
+            element.classList.remove(className);
+        }
+    }
+}
+
+function showLogoutButtonsIfLoggedIn({ onNotLogin, onLoggedIn }: { onNotLogin?: () => void; onLoggedIn?: () => void; } = {}) {
+    let isLoggedIn = checkLogin();
+    toggleClassNameByClass('nav-menu-item login-logout', 'logged-in', isLoggedIn);
+    if (!isLoggedIn) {
+        if (onNotLogin) {
+            onNotLogin();
+        }
+        return;
+    }
+    if (onLoggedIn) {
+        onLoggedIn();
+    }
+}
+
+function logout() {
+    let data = sessionStorage.getItem(storageKey);
+    if (!data) {
+        window.location.href = 'Home.html';
+    }
+    let companyInfo = JSON.parse(data) as CompanyWithSession;
+    if (!companyInfo) {
+        window.location.href = 'Home.html';
+    }
+    sessionStorage.removeItem(storageKey);
+    let parameters = new Map<string, string>();
+    parameters.set('sessionId', `${companyInfo.sessionId}`);
+    let jsonUrl = makeUrl('Employer.php', RequestFor.PHP, parameters);
+    deleteJsonAsync(jsonUrl.url, null, (_) => {
+        window.location.href = 'Home.html';
+        resetForm();
+    }, _ => {
+        window.location.href = 'Home.html';
+    });
 }
