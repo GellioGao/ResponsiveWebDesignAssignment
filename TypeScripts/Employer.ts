@@ -98,6 +98,7 @@ function logout() {
     let jsonUrl = makeUrl('Employer.php', RequestFor.PHP, parameters);
     deleteJsonAsync(jsonUrl.url, null, (_) => {
         window.location.href = 'Home.html';
+        resetForm();
     }, _ => {
         window.location.href = 'Home.html';
     });
@@ -151,6 +152,7 @@ function deleteJobAsync(id: number, onComplete: (queryString: string) => void, o
 
 function publishNewJob() {
     let job_title = document.getElementById("job-title") as HTMLInputElement;
+    let job_classification = document.getElementById("job-classification") as HTMLInputElement;
     let responsibilities = document.getElementById("responsibilities") as HTMLTextAreaElement;
     let requirements = document.getElementById("requirements") as HTMLTextAreaElement;
     let address = document.getElementById("address") as HTMLInputElement;
@@ -167,7 +169,7 @@ function publishNewJob() {
         employer: companyName,
         employerId: companyId,
         address: address.value,
-        classification: "software",
+        classification: job_classification.value,
         salary: salary.value,
         contact: contact_info.value
     };
