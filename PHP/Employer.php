@@ -69,7 +69,6 @@ $Register = function ($employer) use ($conn) {
             return;
         }
 
-
         $Company = $conn->escape_string($employer->company);
         $BusinessArea = $conn->escape_string($employer->businessArea);
         $BusinessStatus = $conn->escape_string($employer->businessStatus);
@@ -78,6 +77,20 @@ $Register = function ($employer) use ($conn) {
         $Email = $conn->escape_string($employer->email);
         $Username = $conn->escape_string($employer->username);
         $Password = $conn->escape_string($employer->password);
+
+        $sql = "SELECT count(*) as ExistUsers 
+            FROM `rwdassignment`.`employers` 
+            WHERE `employers`.`username` = '$Username';";
+        $result = $conn->query($sql);
+        if ($result && $result->num_rows > 0) {
+            // output data of each row
+            while ($row = $result->fetch_assoc()) {
+                if(intval($row['ExistUsers']) > 0){
+                    echo '{"result":"bad"}';
+                    return;
+                }
+            }
+        }
 
         $sql = "INSERT INTO `rwdassignment`.`employers`
         (`name`,
