@@ -23,7 +23,7 @@ CREATE TABLE `rwdassignment`.`jobs` (
   `responsibilities` TEXT(1500) NOT NULL,
   `requirements` TEXT(500) NOT NULL,
   `address` VARCHAR(150) NULL,
-  `salary` DECIMAL(7,2) NULL,
+  `salary` DECIMAL(8,2) NULL,
   `contact` VARCHAR(50) NOT NULL,
   `deleted` TINYINT NULL,
   `deleted_date` DATETIME NULL,

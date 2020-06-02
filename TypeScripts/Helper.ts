@@ -143,7 +143,7 @@ function makeUrl(path: string, type: RequestFor = RequestFor.PHP, parameters: Ma
     var queryString = '?';
     if (parameters != null) {
         parameters.forEach((value, key) => {
-            queryString += `${key}=${value}&`;
+            queryString += `${key}=${encodeURIComponent(value)}&`;
         });
     }
     let jsonUrl = getRequestUrl(path, type);
